@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=rsfyi
+      - POSTGRES_PASSWORD=rsfyi
+      - POSTGRES_DB=saastraa
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./postgres-db:/var/lib/postgresql/data
+
+volumes:
+  postgres-db:
